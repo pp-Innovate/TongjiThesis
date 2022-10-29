@@ -881,6 +881,40 @@
   \endgroup
 }
 
+% 新版原创性声明与授权书合为一页
+\newcommand{\tongji@declauth@mk}
+{
+  \begin{center}
+    \xiaoer\heiti\textbf{\tongji@declarename}
+  \end{center}
+  \sihao[1.95]\par
+  \tongji@declaretext{\tongji@cheadingtitle}\par
+  \vskip2pt
+  \begingroup
+    \parindent0pt\sihao
+    \hspace*{5cm}\textbf{\tongji@authorsig}\relax\hspace*{1cm}\\[3pt]
+    \hspace*{8cm}\textbf{\tongji@date}\relax\hspace*{0.5cm}
+  \endgroup
+  \begin{center}
+    \xiaowu
+    ------------------------------------------------------------------------------------------------------------------------------------------
+  \end{center}
+  \begin{center}
+    \xiaoer\heiti\textbf{\tongji@authtitle}
+  \end{center}
+  \sihao[1.95]\par
+  \tongji@authorization\par
+  \textbf{本学位论文属于（在以下方框内打``\checkmark''）：}\par
+  $\square$ \ \textbf{保密，在\_\_\_\_\_年解密后适用本授权书。}\par
+  $\square$ \ \textbf{不保密。}\par
+  \begin{center}
+    \begin{tabular}{lll}
+      \textbf{\tongji@authorsig} & \ \ \ \ \ \ \ \ \ & \textbf{\tongji@supervisorsig} \\
+      \textbf{\tongji@date} & \ \ \ \ \ \ \ \ \ & \textbf{\tongji@date}
+    \end{tabular}
+  \end{center}
+}
+
 % 摘要
 % 摘要最好以环境的形式出现（否则命令的形式会导致开始结束的括号距离太远，我不喜
 % 欢），这就必须让环境能够自己保存内容留待以后使用。使用 \pkg{environ} 的
@@ -935,9 +969,7 @@
     \cleardoublepage
     \engcover
     \cleardoublepage
-    \tongji@authorization@mk
-    \cleardoublepage
-    \tongji@declareshortname@mk
+    \tongji@declauth@mk
   \end{titlepage}
   \normalsize
   \tongji@makeabstract
